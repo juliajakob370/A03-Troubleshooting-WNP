@@ -1,6 +1,10 @@
-﻿// 
-// Place your file header comments here
-//
+﻿/*
+ * FILE             : A03-Q1 > Program.cs
+ * PROJECT          : A03-Q1
+ * PROGRAMMER       : Julia Jakob, Bibi Murwared Enayat Zada, Mohammad Mehdi Ebrahimzadeh
+ * FIRST VERSION    : 2026-03-17
+ * DESCRIPTION      : This is the our code solution for question 1 of Assignment 3 Troubleshooting
+ */
 using System.Diagnostics;
 
 namespace A03_Q1
@@ -9,8 +13,11 @@ namespace A03_Q1
     {
         static void Main(string[] args)
         {
-            InitialCode();
-            BetterCode();
+            for (int i = 0; i < 10; i++)
+            {
+                InitialCode();
+                BetterCode();
+            }
 
             Console.WriteLine("Press any key to end...");
             Console.ReadKey();
@@ -18,12 +25,13 @@ namespace A03_Q1
 
         static void InitialCode()
         {
-            // You may add code in this method for purposes of 
-            // measuring performance.
-            int temp = 0;
+            int temp = 0; 
             Random rand = new Random();
-            int LOOPCOUNT = 10000;
-            //
+            int LOOPCOUNT = 100000000;
+
+            Stopwatch sw = new Stopwatch(); // define stopwatch object
+            sw.Start(); // start the stopwatch just before the loop
+
             for (int counter = 0; counter < LOOPCOUNT; counter++)
             {
                 float randomFloat = rand.NextSingle();
@@ -39,20 +47,22 @@ namespace A03_Q1
                 {
                     temp = 3;
                 }
-            //
             }
+
+            sw.Stop(); // stop the stopwatch after the loop
+
+            Console.WriteLine($"InitialCode total time: {sw.ElapsedMilliseconds} ms"); // print result of the timer
         }
 
         static void BetterCode()
         {
-            // Rewrite the code from initial code here, with
-            // optimizations for time.
-            // You may add code in this method for purposes of 
-            // measuring performance.
             int temp = 0;
             Random rand = new Random();
-            int LOOPCOUNT = 10000;
-            //
+            int LOOPCOUNT = 100000000;
+
+            Stopwatch sw = new Stopwatch(); // define stopwatch object
+            sw.Start(); // start the stopwatch just before the loop
+
             for (int counter = 0; counter < LOOPCOUNT; counter++)
             {
                 float randomFloat = rand.NextSingle();
@@ -68,8 +78,11 @@ namespace A03_Q1
                 {
                     temp = 3;
                 }
-                //
             }
+
+            sw.Stop(); // stop the stopwatch after the loop
+
+            Console.WriteLine($"BetterCode total time: {sw.ElapsedMilliseconds} ms"); // print result of the timer
         }
     }
 }
