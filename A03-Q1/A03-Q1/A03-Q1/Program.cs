@@ -66,15 +66,16 @@ namespace A03_Q1
             for (int counter = 0; counter < LOOPCOUNT; counter++)
             {
                 float randomFloat = rand.NextSingle();
+
                 if (randomFloat < .10)
                 {
                     temp = 1;
                 }
-                if (randomFloat >= .10 && randomFloat < .30)
+                else if (randomFloat >= .10 && randomFloat < .30)
                 {
                     temp = 2;
                 }
-                if (randomFloat >= .3)
+                else
                 {
                     temp = 3;
                 }
