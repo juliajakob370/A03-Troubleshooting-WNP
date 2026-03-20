@@ -71,7 +71,7 @@ namespace A03_Q1
                 {
                     temp = 1;
                 }
-                else if (randomFloat >= .10 && randomFloat < .30)
+                else if (randomFloat < .30)
                 {
                     temp = 2;
                 }
